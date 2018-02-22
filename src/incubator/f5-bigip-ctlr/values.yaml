@@ -1,0 +1,28 @@
+# Default values for foo.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+serviceaccount: f5-bigip-ctlr-serviceaccount
+namespace: kube-system
+image:
+  user: f5networksdevel
+  repo: k8s-bigip-ctlr
+  tag: devel-master
+  pullPolicy: Always
+args:
+  log_level: DEBUG
+  partition: f5-bigip-ctlr
+  bigip_url: 172.16.2.37
+  verify_interval: 2
+  node_poll_interval: 1
+bigip_login_secret: f5-bigip-ctlr-login
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi

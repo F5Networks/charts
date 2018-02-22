@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  demo-web-app:
+  - apiVersion: v1
+    appVersion: 0.0.1
+    created: 2018-02-22T20:13:58.451459545Z
+    description: A simple demo web app for use in networking examples.
+    digest: e53ce4b0602898b8614ffdf81b448c8a7f9ae9dfaa0f88a311dff5395cd0ad20
+    name: demo-web-app
+    urls:
+    - https://f5networks.github.io/charts/stable/demo-web-app-0.0.1.tgz
+    version: 0.0.1
+generated: 2018-02-22T20:13:58.451076129Z
