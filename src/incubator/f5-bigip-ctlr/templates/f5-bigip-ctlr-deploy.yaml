@@ -40,7 +40,7 @@ spec:
         - --bigip-partition
         - {{ .Values.args.partition }}
         - --bigip-url
-        - {{ .Values.args.bigip_url }}
+        - {{required "BigIP url not specified - add to Values or pass with `--set` " .Values.args.bigip_url }}
         - --bigip-username
         - $(BIGIP_USERNAME)
         - --bigip-password

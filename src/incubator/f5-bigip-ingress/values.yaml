@@ -1,0 +1,29 @@
+# Values template for f5-bigip-ingress
+# Suggested use is to copy, specify values, and pass with `-f` to helm install
+ingress:
+  namespace: ~
+  annotations:
+    # required
+    virtual-server.f5.com/ip: ~
+    # required
+    virtual-server.f5.com/partition: ~
+    # annotations below are optional
+    #  virtual-server.f5.com/balance:
+    #  virtual-server.f5.com/http-port:
+    #  virtual-server.f5.com/https-port:
+    #  virtual-server.f5.com/allow-http:
+    #  virtual-server.f5.com/ssl-redirect:
+    # Health monitors must be specified as JSON
+    # https://github.com/F5Networks/k8s-bigip-ctlr/issues/594
+    virtual-server.f5.com/health: |
+      [
+        {
+          "path":     "/",
+          "send":     "HTTP GET /",
+          "interval": 5,
+          "timeout":  10
+        }
+      ]
+  backend:
+    serviceName: ~
+    servicePort: ~

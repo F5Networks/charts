@@ -1,6 +1,3 @@
-# Default values for foo.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
 serviceaccount: f5-bigip-ctlr-serviceaccount
 namespace: kube-system
 image:
@@ -11,7 +8,7 @@ image:
 args:
   log_level: DEBUG
   partition: f5-bigip-ctlr
-  bigip_url: 172.16.2.37
+  bigip_url: ~
   verify_interval: 2
   node_poll_interval: 1
 bigip_login_secret: f5-bigip-ctlr-login
