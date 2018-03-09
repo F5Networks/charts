@@ -1,7 +1,5 @@
 {{/* vim: set filetype=mustache: */}}
-{{/*
-Expand the name of the chart.
-*/}}
+{{/* Expand the name of the chart. */}}
 {{- define "f5-bigip-ingress.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
@@ -29,4 +27,33 @@ Create chart name and version as used by the chart label.
 */}}
 {{- define "f5-bigip-ingress.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{- define "f5-bigip-ingress-backend" -}}
+backend:
+  serviceName: {{ .backend.serviceName }}
+  servicePort: {{ .backend.servicePort }}
+{{- end -}}
+
+{{- define "f5-bigip-ingress-path" }}
+{{- if .paths -}}
+{{ (printf "- http:") | indent 2 }}
+{{ (printf "paths:") | indent 6 }}
+{{- range $key, $value := .paths }}
+{{ (printf "- path: %s" .path ) | indent 6 }}
+{{ include "f5-bigip-ingress-backend" . | indent 8 }}
+{{- end }}
+{{- else if .http }}
+  paths:
+{{- range $key, $value := .http.paths }}
+  - path: {{ .path }}
+{{ include "f5-bigip-ingress-backend" . | indent 4 }}
+{{- end }}
+{{- end }}
+{{- end -}}
+
+{{- define "f5-bigip-ingress-host" -}}
+- host: {{ .host }}
+  http:
+{{- include "f5-bigip-ingress-path" . | indent 2 }}
 {{- end -}}

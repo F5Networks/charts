@@ -1,1 +1,1 @@
-F5 Ingress
+F5 Ingress: {{ .Release.Name }}
