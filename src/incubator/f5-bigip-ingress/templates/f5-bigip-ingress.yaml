@@ -13,7 +13,18 @@ metadata:
       {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
-  backend:
-    serviceName: {{ .Values.ingress.backend.serviceName }}
-    servicePort: {{ .Values.ingress.backend.servicePort }}
-  
+{{- $hostIndent := 0 -}}
+{{- if .Values.ingress.spec.rules }}
+  rules:
+{{- range $key, $value := .Values.ingress.spec.rules }}
+{{- if .host}}
+{{- $hostIndent := 2 }}
+{{ include "f5-bigip-ingress-host" . | indent (int ( $hostIndent )) }}
+{{- else }}
+{{ include "f5-bigip-ingress-path" . }}
+{{- end }}
+{{- end }}
+{{- else }}
+{{/* simple service */}}
+{{- include "f5-bigip-ingress-backend" .Values.ingress.spec | indent 2 }}
+{{- end }}

@@ -4,12 +4,12 @@ ingress:
   namespace: ~
   annotations:
     # required
-    virtual-server.f5.com/ip: ~
+    virtual-server.f5.com/ip: 172.16.3.59
     # required
-    virtual-server.f5.com/partition: ~
+    virtual-server.f5.com/partition: f5-bigip-ctlr
     # annotations below are optional
     #  virtual-server.f5.com/balance:
-    #  virtual-server.f5.com/http-port:
+    virtual-server.f5.com/http-port: 80
     #  virtual-server.f5.com/https-port:
     #  virtual-server.f5.com/allow-http:
     #  virtual-server.f5.com/ssl-redirect:
@@ -26,5 +26,5 @@ ingress:
       ]
   spec:
     backend:
-      serviceName: ~
-      servicePort: ~
+      serviceName: svc-1-demo-web-app
+      servicePort: 80
