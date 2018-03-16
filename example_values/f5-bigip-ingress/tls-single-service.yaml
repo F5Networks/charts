@@ -9,10 +9,10 @@ ingress:
     virtual-server.f5.com/partition: f5-bigip-ctlr
     # annotations below are optional
     #  virtual-server.f5.com/balance:
-    virtual-server.f5.com/http-port: 80
+    #  virtual-server.f5.com/http-port:
     #  virtual-server.f5.com/https-port:
-    #  ingress.kubernetes.io/allow-http:
-    #  ingress.kubernetes.io/ssl-redirect:
+    ingress.kubernetes.io/allow-http: false
+    ingress.kubernetes.io/ssl-redirect: false
     # Health monitors must be specified as JSON
     # https://github.com/F5Networks/k8s-bigip-ctlr/issues/594
     virtual-server.f5.com/health: |
@@ -28,3 +28,5 @@ ingress:
     backend:
       serviceName: svc-1-demo-web-app
       servicePort: 80
+    tls:
+      secretName: /Common/clientssl

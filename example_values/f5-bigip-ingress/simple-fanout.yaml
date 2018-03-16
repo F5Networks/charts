@@ -11,8 +11,8 @@ ingress:
     #  virtual-server.f5.com/balance:
     virtual-server.f5.com/http-port: 80
     #  virtual-server.f5.com/https-port:
-    #  virtual-server.f5.com/allow-http:
-    #  virtual-server.f5.com/ssl-redirect:
+    #  ingress.kubernetes.io/allow-http:
+    #  ingress.kubernetes.io/ssl-redirect:
     # Health monitors must be specified as JSON
     # https://github.com/F5Networks/k8s-bigip-ctlr/issues/594
     virtual-server.f5.com/health: |

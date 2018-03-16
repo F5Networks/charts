@@ -13,6 +13,10 @@ metadata:
       {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
+{{- if .Values.ingress.spec.tls }}
+  tls:
+    - secretName: {{ .Values.ingress.spec.tls.secretName | quote }}
+{{- end }}
 {{- $hostIndent := 0 -}}
 {{- if .Values.ingress.spec.rules }}
   rules:
