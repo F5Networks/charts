@@ -45,7 +45,7 @@ ingress:
         paths:
         - path: /foo
           backend:
-            serviceName: svc-0-demo-web-app
+            serviceName: svc-1-demo-web-app
             servicePort: 80
         - path: /bar
           backend:

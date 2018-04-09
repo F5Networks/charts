@@ -17,9 +17,9 @@ args:
   bigip_url: ~
   bigip_partition: f5-bigip-ctlr
   # OPTIONAL PARAMS -- uncomment and provide values for those you wish to use.
-  verify_interval: 2
-  node-poll_interval: 1
-  log_level: DEBUG
+  # verify_interval:
+  # node-poll_interval:
+  # log_level:
   # python_basedir: ~
   # VXLAN
   # openshift_sdn_name:
@@ -36,10 +36,10 @@ args:
   # use_node_internal:
   # use_secrets:  
 image:
-  # For the incubator chart this is the development image
-  user: f5networksdevel
+  # Use the tag to target a specific version of the Controller
+  user: f5networks
   repo: k8s-bigip-ctlr
-  tag: devel-master
+  tag: latest
   pullPolicy: Always
 resources: {}
   # If you want to specify resources, uncomment the following

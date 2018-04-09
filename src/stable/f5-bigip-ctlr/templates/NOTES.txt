@@ -5,7 +5,7 @@ General Controller Documentation:
 - OpenShift: http://clouddocs.f5.com/containers/latest/openshift/index.html
 
 Using Ingress? There's a helm chart for that:
-- https://github.com/F5Networks/charts/tree/master/src/incubator/f5-bigip-ingress
+- https://github.com/F5Networks/charts/tree/master/src/stable/f5-bigip-ingress
 
 Using Routes in OpenShift? No helm chart yet, but we do have great documentation:
 - http://clouddocs.f5.com/containers/latest/openshift/kctlr-openshift-routes.html

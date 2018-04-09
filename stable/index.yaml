@@ -3,11 +3,30 @@ entries:
   demo-web-app:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: 2018-02-22T20:13:58.451459545Z
+    created: 2018-04-12T17:41:28.417686409Z
     description: A simple demo web app for use in networking examples.
     digest: e53ce4b0602898b8614ffdf81b448c8a7f9ae9dfaa0f88a311dff5395cd0ad20
     name: demo-web-app
     urls:
     - https://f5networks.github.io/charts/stable/demo-web-app-0.0.1.tgz
     version: 0.0.1
-generated: 2018-02-22T20:13:58.451076129Z
+  f5-bigip-ctlr:
+  - apiVersion: v1
+    created: 2018-04-12T17:41:28.417956914Z
+    description: Deploy the F5 Networks BIG-IP Controller for Kubernetes and OpenShift
+      (k8s-bigip-ctlr).
+    digest: bf47cc7bdd857e6c0e2ae2199f26d2410b76576136211805a4becb20816abc85
+    name: f5-bigip-ctlr
+    urls:
+    - https://f5networks.github.io/charts/stable/f5-bigip-ctlr-0.0.3.tgz
+    version: 0.0.3
+  f5-bigip-ingress:
+  - apiVersion: v1
+    created: 2018-04-12T17:41:28.418185347Z
+    description: A Helm chart to Deploy Ingress resources for the f5-bigip-ctlr
+    digest: bb2a1313197b05d0ae78e97b88f2d623c734b3caa8a1665e42d9ee9697ae1862
+    name: f5-bigip-ingress
+    urls:
+    - https://f5networks.github.io/charts/stable/f5-bigip-ingress-0.0.4.tgz
+    version: 0.0.4
+generated: 2018-04-12T17:41:28.417349781Z

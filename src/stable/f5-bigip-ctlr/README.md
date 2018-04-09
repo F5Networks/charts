@@ -22,15 +22,15 @@ The chart creates a Deployment for one Pod containing the [k8s-bigip-ctlr](http:
 Run the commands shown below to install the chart using the default values.
 
 ```
-helm repo add f5-incubator https://f5networks.github.io/charts/incubator
-helm install --set args.bigip_url=1.2.3.4 f5-incubator/f5-bigip-ctlr
+helm repo add f5-stable https://f5networks.github.io/charts/stable
+helm install --set args.bigip_url=1.2.3.4 f5-stable/f5-bigip-ctlr
 ```
 
 Or
 
 ```
 # from fork
-helm install --set args.bigip_url=1.2.3.4 charts/src/incubator/f5-bigip-ctlr
+helm install --set args.bigip_url=1.2.3.4 charts/src/stable/f5-bigip-ctlr
 ```
 
 ## Chart parameters:
