@@ -5,7 +5,7 @@ This chart simplifies repeatable, versioned use of the [F5 BIG-IP Controller as 
 ### Prereqisites
 
 - Install [Helm with Tiller](https://docs.helm.sh/using_helm/#installing-helm) on your cluster with appropriate permissions.
-- Deploy the F5 BIG-IP Controller in your cluster. You can use a separate chart - the [f5-bigip-ctlr chart](https://github.com/F5Networks/charts/tree/master/src/stable/f5-bigip-ctlr) - to deploy the controller, or you can deploy it [manually](http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-app-install.html). 
+- Deploy the F5 BIG-IP Controller in your cluster. You can use the [f5-bigip-ctlr chart](https://github.com/F5Networks/charts/tree/master/src/stable/f5-bigip-ctlr) to deploy the Controller or you can deploy it [manually](http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-app-install.html). 
 - Deploy the Pods/Services accepting traffic from the Ingress.
 
 > **Note:** This chart and the [f5-bigip-controller](https://github.com/recursivelycurious/charts/tree/wip/src/stable/f5-bigip-ctlr) chart can be used *independently or together*.  
@@ -38,7 +38,7 @@ helm install -f path/to/custom-values.yaml charts/src/stable/f5-bigip-ingress/
 
 Parameter | Description | Default
 ----------|-------------|--------
-ingress.annotations.virtual-server.f5.com/ip | IP accepting traffic on the BIG-IP | **Required** no default
+ingress.annotations.virtual-server.f5.com/ip | IP accepting traffic on the BIG-IP device | **Required** no default
 ingress.annotations.virtual-server.f5.com/partition | BIG-IP partition of the Controller | **Required** no default
 ingress.namespace | Kubernetes/OpenShift namespace for the Ingress | Optional
 spec | Backend(s) and associated hosts and paths | See [examples](https://github.com/F5Networks/charts/tree/master/example_values/f5-bigip-ingress) 
