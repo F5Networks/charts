@@ -11,7 +11,7 @@ ingress:
     virtual-server.f5.com/ip: ~
     # required
     virtual-server.f5.com/partition: ~
-    # annotations below are optional
+    # Annotations below are optional
     #  virtual-server.f5.com/balance:
     #  virtual-server.f5.com/http-port:
     #  virtual-server.f5.com/https-port:

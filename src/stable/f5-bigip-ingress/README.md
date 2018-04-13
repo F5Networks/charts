@@ -40,16 +40,16 @@ Parameter | Description | Default
 ----------|-------------|--------
 ingress.annotations.virtual-server.f5.com/ip | IP accepting traffic on the BIG-IP | **Required** no default
 ingress.annotations.virtual-server.f5.com/partition | BIG-IP partition of the Controller | **Required** no default
-ingress.namespace | Kubernetes/OpenShift namespace for the ingress | Optional
+ingress.namespace | Kubernetes/OpenShift namespace for the Ingress | Optional
 spec | Backend(s) and associated hosts and paths | See [examples](https://github.com/F5Networks/charts/tree/master/example_values/f5-bigip-ingress) 
 
-### Additional Optional parameters as annotations
+### Additional Optional parameters as Annotations
 
-The annotations listed under the `ingress.annotations` parameter are consumed as an array and any of the [documentend annotations for the k8s-bigip-ctlr](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/#supported-ingress-annotations) may be used.
+The Annotations listed under the `ingress.annotations` parameter are consumed as an array and any of the [documentend Annotations for the k8s-bigip-ctlr](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/#supported-ingress-annotations) may be used.
 
-When using the `virtual-server.f5.com/health` annotation the value must be a JSON array of the individual health monitors. Single and multiple health monitor examples can be seen in the [Ingress Examples](https://github.com/F5Networks/charts/tree/master/example_values) in this repo.
+When using the `virtual-server.f5.com/health` Annotation the value must be a JSON array of the individual health monitors. Single and multiple health monitor examples can be seen in the [Ingress Examples](https://github.com/F5Networks/charts/tree/master/example_values) in this repo.
 
-> CAUTION: Be sure to use the correct version of the Controller for the annotations you wish to use. See the [k8s-bigip-ctlr release notes](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/RELEASE-NOTES.html) for more information.
+> CAUTION: Be sure to use the correct version of the Controller for the Annotations you wish to use. See the [k8s-bigip-ctlr release notes](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/RELEASE-NOTES.html) for more information.
 
-If you have a specific use case for F5 products in the kubernetes environment that would benefit from a curated chart, please [open an issue](https://github.com/F5Networks/charts/issues) describing your use case and providing example resources.
+If you have a specific use case for F5 products in the Kubernetes environment that would benefit from a curated chart, please [open an issue](https://github.com/F5Networks/charts/issues) describing your use case and providing example resources.
 

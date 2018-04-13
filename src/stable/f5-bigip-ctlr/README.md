@@ -42,14 +42,14 @@ helm install --set args.bigip_url=1.2.3.4 charts/src/stable/f5-bigip-ctlr
 Parameter | Description | Default
 ----------|-------------|--------
 bigip_login_secret | Secret that contains BIG-IP login credentials | f5-bigip-ctlr-login
-serviceaccount | name of ServiceAccount the ctlr should use | f5-bigip-ctlr-serviceaccount
-args.bigip_url | The admin IP for your BIG-IP | **Required**, no default
-args.partition | BIG-IP partition the ctlr is to manage | f5-bigip-ctlr
+serviceaccount | name of ServiceAccount the ctlr will use | f5-bigip-ctlr-serviceaccount
+args.bigip_url | The management IP for your BIG-IP | **Required**, no default
+args.partition | BIG-IP partition the ctlr will manage | f5-bigip-ctlr
 args.log_level | Log detail | DEBUG for incubation chart
-args.verify_interval | Interval in seconds to verify BIG-IP | 2 for incubation
-args.node_poll_interval | Interval in seconds to poll the cluster | 1 for incubation
+args.verify_interval | Interval, in seconds, at which to verify BIG-IP settings | Default is 30
+args.node_poll_interval | Interval, in seconds, at which to poll the cluster | Default is 30
 
 See the Controller documentation for a full list of [configuration parameters](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/#controller-configuration-parameters).
 
-If you have a specific use case for F5 products in the kubernetes environment that would benefit from a curated chart, please [open an issue](https://github.com/F5Networks/charts/issues) describing your use case and providing example resources.
+If you have a specific use case for F5 products in the Kubernetes environment that would benefit from a curated chart, please [open an issue](https://github.com/F5Networks/charts/issues) describing your use case and providing example resources.
 
