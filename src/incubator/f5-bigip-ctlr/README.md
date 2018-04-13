@@ -43,7 +43,7 @@ Parameter | Description | Default
 ----------|-------------|--------
 bigip_login_secret | Secret that contains BIG-IP login credentials | f5-bigip-ctlr-login
 serviceaccount | name of ServiceAccount the ctlr will use | f5-bigip-ctlr-serviceaccount
-args.bigip_url | The management IP for your BIG-IP | **Required**, no default
+args.bigip_url | The management IP for your BIG-IP device | **Required**, no default
 args.partition | BIG-IP partition the ctlr will manage | f5-bigip-ctlr
 args.log_level | Log detail | DEBUG for incubation chart
 args.verify_interval | Interval, in seconds, at which to verify BIG-IP settings | 2 for incubation
