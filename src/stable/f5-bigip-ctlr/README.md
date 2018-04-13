@@ -22,15 +22,15 @@ The chart creates a Deployment for one Pod containing the [k8s-bigip-ctlr](http:
 Run the commands shown below to install the chart using the default values.
 
 ```
-helm repo add f5-incubator https://f5networks.github.io/charts/incubator
-helm install --set args.bigip_url=1.2.3.4 f5-incubator/f5-bigip-ctlr
+helm repo add f5-stable https://f5networks.github.io/charts/stable
+helm install --set args.bigip_url=1.2.3.4 f5-stable/f5-bigip-ctlr
 ```
 
 Or
 
 ```
 # from fork
-helm install --set args.bigip_url=1.2.3.4 charts/src/incubator/f5-bigip-ctlr
+helm install --set args.bigip_url=1.2.3.4 charts/src/stable/f5-bigip-ctlr
 ```
 
 ## Chart parameters:
@@ -46,8 +46,8 @@ serviceaccount | name of ServiceAccount the ctlr will use | f5-bigip-ctlr-servic
 args.bigip_url | The management IP for your BIG-IP device | **Required**, no default
 args.partition | BIG-IP partition the ctlr will manage | f5-bigip-ctlr
 args.log_level | Log detail | DEBUG for incubation chart
-args.verify_interval | Interval, in seconds, at which to verify BIG-IP settings | 2 for incubation
-args.node_poll_interval | Interval, in seconds, at which to poll the cluster | 1 for incubation
+args.verify_interval | Interval, in seconds, at which to verify BIG-IP settings | Default is 30
+args.node_poll_interval | Interval, in seconds, at which to poll the cluster | Default is 30
 
 See the Controller documentation for a full list of [configuration parameters](http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/#controller-configuration-parameters).
 
