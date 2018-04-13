@@ -5,7 +5,7 @@ This chart simplifies repeatable, versioned use of the [F5 BIG-IP Controller as 
 ### Prereqisites
 
 - Install [Helm with Tiller](https://docs.helm.sh/using_helm/#installing-helm) on your cluster with appropriate permissions.
-- Deploy the F5 BIG-IP Controller in your cluster. You can use the [f5-bigip-ctlr chart](https://github.com/F5Networks/charts/tree/master/src/stable/f5-bigip-ctlr) - to deploy the Controller, or you can deploy it [manually](http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-app-install.html). 
+- Deploy the F5 BIG-IP Controller in your cluster. You can use the [f5-bigip-ctlr chart](https://github.com/F5Networks/charts/tree/master/src/stable/f5-bigip-ctlr) to deploy the Controller, or you can deploy it [manually](http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-app-install.html). 
 - Deploy the Pods/Services accepting traffic from the Ingress.
 
 > **Note:** This chart and the [f5-bigip-controller](https://github.com/recursivelycurious/charts/tree/wip/src/incubator/f5-bigip-ctlr) chart can be used *independently or together*.  
