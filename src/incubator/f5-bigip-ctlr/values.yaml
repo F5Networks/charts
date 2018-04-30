@@ -3,7 +3,7 @@
 # OpenShift: http://clouddocs.f5.com/containers/latest/openshift/kctlr-openshift-app-install.html#install-kctlr-openshift
 #
 # access / permissions / RBAC
-# To create a secret using kubectl see 
+# To create a secret using kubectl see
 # http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-secrets.html#secret-bigip-login
 bigip_login_secret: f5-bigip-ctlr-login
 serviceaccount: f5-bigip-ctlr-serviceaccount
@@ -34,13 +34,16 @@ args:
   # resolve_ingress_names:
   # running_in_cluster:
   # use_node_internal:
-  # use_secrets:  
+  # use_secrets:
 image:
   # For the incubator chart this is the development image
   user: f5networksdevel
   repo: k8s-bigip-ctlr
   tag: devel-master
   pullPolicy: Always
+  # pullSecrets:
+  #   - secret1
+  #   - secret2
 resources: {}
   # If you want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
