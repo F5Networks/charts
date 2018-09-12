@@ -9,7 +9,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ template "f5-bigip-ctlr.fullname" . }}
-  namespace: {{ .Release.Namespace | quote }}
   labels:
     app: {{ template "f5-bigip-ctlr.name" . }}
     chart: {{ template "f5-bigip-ctlr.chart" . }}
