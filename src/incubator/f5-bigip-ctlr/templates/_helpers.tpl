@@ -34,9 +34,9 @@ Create chart name and version as used by the chart label.
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "cert-manager.serviceAccountName" -}}
+{{- define "f5-bigip-ctlr.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create -}}
-    {{ default (include "cert-manager.fullname" .) .Values.serviceAccount.name }}
+    {{ default (include "f5-bigip-ctlr.fullname" .) .Values.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.serviceAccount.name }}
 {{- end -}}
