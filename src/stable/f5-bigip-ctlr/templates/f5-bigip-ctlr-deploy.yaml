@@ -49,10 +49,6 @@ spec:
         - name: bigip-creds
           mountPath: "/tmp/creds"
           readOnly: true
-        volumes:
-        - name: bigip-creds
-          secret:
-            secretName: {{ .Values.bigip_login_secret }}
 {{- end }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         command:
@@ -71,4 +67,10 @@ spec:
         - --{{ $key | replace "_" "-"}}
         - {{ $value | quote }}
         {{- end }}
+{{- if not .Values.secret_env }}
+      volumes:
+      - name: bigip-creds
+        secret:
+           secretName: {{ .Values.bigip_login_secret }}
+{{- end }}
 {{- end }}
