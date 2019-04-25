@@ -9,10 +9,9 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ template "f5-bigip-ctlr.fullname" . }}
-  namespace: {{ .Values.namespace }}
   labels:
     app: {{ template "f5-bigip-ctlr.name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "-" }}
+    chart: {{ template "f5-bigip-ctlr.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
@@ -23,7 +22,13 @@ spec:
         app: {{ template "f5-bigip-ctlr.name" . }}
         release: {{ .Release.Name }}
     spec:
-      serviceAccountName: {{ .Values.serviceaccount }}
+      serviceAccountName: {{ template "f5-bigip-ctlr.serviceAccountName" . }}
+{{- if .Values.image.pullSecrets }}
+      imagePullSecrets:
+      {{- range $pullSecret := .Values.image.pullSecrets }}
+        - name: {{ $pullSecret }}
+      {{- end }}
+{{- end }}
       containers:
       - name: {{ template "f5-bigip-ctlr.name" . }}
         image: "{{ .Values.image.user }}/{{ .Values.image.repo }}:{{ .Values.image.tag }}"
