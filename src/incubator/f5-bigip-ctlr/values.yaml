@@ -6,9 +6,18 @@
 # To create a secret using kubectl see
 # http://clouddocs.f5.com/containers/latest/kubernetes/kctlr-secrets.html#secret-bigip-login
 bigip_login_secret: f5-bigip-ctlr-login
-serviceaccount: f5-bigip-ctlr-serviceaccount
-# This namespace is where the Controller lives;
-namespace: kube-system
+
+rbac:
+  # Specifies whether RBAC resources should be created
+  create: true
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name:
+
 args:
   # See http://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/#controller-configuration-parameters
   # NOTE: helm has difficulty with values using `-`; `_` are used for naming
