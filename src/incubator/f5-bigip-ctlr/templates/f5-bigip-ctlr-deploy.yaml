@@ -23,7 +23,7 @@ spec:
         app: {{ template "f5-bigip-ctlr.name" . }}
         release: {{ .Release.Name }}
     spec:
-      serviceAccountName: {{ .Values.serviceaccount }}
+      serviceAccountName: {{ template "f5-bigip-ctlr.serviceAccountName" . }}
 {{- if .Values.image.pullSecrets }}
       imagePullSecrets:
       {{- range $pullSecret := .Values.image.pullSecrets }}
