@@ -65,8 +65,7 @@ spec:
         - /tmp/creds
 {{- end }}
         {{- range $key, $value := .Values.args }}
-        - --{{ $key | replace "_" "-"}}
-        - {{ $value | quote }}
+        - --{{ $key | replace "_" "-"}}={{ $value }}
         {{- end }}
 {{- if not .Values.secret_env }}
       volumes:
