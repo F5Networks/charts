@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
-baseurl="https://f5networks.github.io/charts/"
+baseurl="https://f5networks.github.io/charts"
 to_index=(incubator stable)
 
 curdir=$(basename $(pwd))
