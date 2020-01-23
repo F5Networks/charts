@@ -11,6 +11,7 @@ metadata:
 rules:
 - apiGroups:
   - ""
+  - "apps"
   - "extensions"
   resources:
   - nodes
@@ -26,6 +27,7 @@ rules:
   - watch
 - apiGroups:
   - ""
+  - "apps"
   - "extensions"
   resources:
   - configmaps

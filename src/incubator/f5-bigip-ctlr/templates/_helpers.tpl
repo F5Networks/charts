@@ -7,6 +7,28 @@ Expand the name of the chart.
 {{- end -}}
 
 {{/*
+Return the appropriate apiVersion for deployment.
+*/}}
+{{- define "deployment.apiVersion" -}}
+{{- if semverCompare ">=1.9-0" .Capabilities.KubeVersion.GitVersion -}}
+{{- print "apps/v1" -}}
+{{- else -}}
+{{- print "extensions/v1beta1" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Check for user given namespace or give kube-system
+*/}}
+{{- define "f5-bigip-ctlr.namespace" -}}
+{{- if hasKey .Values "namespace" -}}
+{{- .Values.namespace -}}
+{{- else -}}
+{{- print "kube-system" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
