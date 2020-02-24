@@ -35,8 +35,8 @@ spec:
 {{- end }}
       containers:
       - name: {{ template "f5-bigip-ctlr.name" . }}
-        image: "{{ .Values.image.user }}/{{ .Values.image.repo }}:{{ .Values.image.tag }}"
-{{- if .Values.secrets_env }}
+        image: "{{ .Values.image.user }}/{{ .Values.image.repo }}:{{ .Values.version }}"
+{{- if .Values.bigip_login_secret }}
         env:
           - name: BIGIP_USERNAME
             valueFrom:
@@ -58,7 +58,7 @@ spec:
         command:
         - /app/bin/k8s-bigip-ctlr
         args:
-{{- if .Values.secrets_env }}
+{{- if .Values.bigip_login_secret }}
         - --bigip-username
         - $(BIGIP_USERNAME)
         - --bigip-password

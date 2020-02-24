@@ -9,35 +9,39 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 rules:
-- apiGroups:
-  - ""
-  - "apps"
-  - "extensions"
-  resources:
-  - nodes
-  - services
-  - endpoints
-  - namespaces
-  - ingresses
-  - secrets
-  - pods
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - ""
-  - "apps"
-  - "extensions"
-  resources:
-  - configmaps
-  - events
-  - ingresses/status
-  verbs:
-  - get
-  - list
-  - watch
-  - update
-  - create
-  - patch
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - apps
+      - extensions
+      - route.openshift.io
+    resources:
+      - nodes
+      - services
+      - endpoints
+      - namespaces
+      - ingresses
+      - secrets
+      - pods
+      - routes
+  - verbs:
+      - get
+      - list
+      - watch
+      - update
+      - create
+      - patch
+    apiGroups:
+      - ''
+      - apps
+      - extensions
+      - route.openshift.io
+    resources:
+      - configmaps
+      - events
+      - ingresses/status
+      - routes/status
 {{- end -}}
