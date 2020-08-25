@@ -42,6 +42,9 @@ args:
   # running_in_cluster:
   # use_node_internal:
   # use_secrets:
+  # insecure: true
+  # custom-resource-mode: true
+  #log-as3-response: true
 image:
   # Use the tag to target a specific version of the Controller
   user: f5networks
