@@ -12,7 +12,7 @@ install:
 
 before_script:
   - ls
-  - helm init --client-only
+  - helm init --stable-repo-url=https://charts.helm.sh/stable --client-only
   
 script:
   - ./tools/helm_lint.sh
