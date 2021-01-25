@@ -71,6 +71,14 @@ spec:
         - --{{ $key | replace "_" "-"}}
         - {{ $value | quote }}
         {{- end }}
+{{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+{{- end }}
+{{- if .Values.tolerations }}
+      tolerations:
+{{ toYaml .Values.tolerations | indent 6 }}
+{{- end }}
 {{- if not .Values.secret_env }}
       volumes:
       - name: bigip-creds

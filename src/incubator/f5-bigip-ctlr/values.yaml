@@ -60,3 +60,15 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 version: devel-master
+
+# Labels for assigning pod(s) to specific node(s).
+nodeSelector: {}
+  # Example:
+  # node-role.kubernetes.io/master: ""
+
+# Tolerations to match node taints.
+tolerations: []
+  # Example:
+  # - effect: NoSchedule
+  #   key: node-role.kubernetes.io/master
+  
