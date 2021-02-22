@@ -47,8 +47,7 @@ spec:
         - --credentials-directory
         - /tmp/creds
         {{- range $key, $value := .Values.args }}
-        - --{{ $key | replace "_" "-"}}
-        - {{ $value | quote }}
+        - --{{ $key | replace "_" "-"}}={{ $value }}
         {{- end }}
       volumes:
       - name: bigip-creds
