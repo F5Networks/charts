@@ -54,8 +54,15 @@ spec:
         args:
         - --credentials-directory
         - /tmp/creds
+        {{- $ns := .Values.args.namespaces }}
         {{- range $key, $value := .Values.args }}
+        {{- if eq $key "namespaces" }}
+        {{- range $ns}}
+        - --namespace={{ . }}
+        {{- end }}
+        {{- else }}
         - --{{ $key | replace "_" "-"}}={{ $value }}
+        {{- end }}
         {{- end }}
 {{- if .Values.nodeSelector }}
       nodeSelector:

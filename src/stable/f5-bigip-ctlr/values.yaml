@@ -34,7 +34,7 @@ args:
   # KUBERNETES
   # default_ingress_ip:
   # kubeconfig:
-  # namespace:
+  # namespaces: ["foo", "bar"]
   # namespace_label:
   # node_label_selector:
   # pool_member_type:
