@@ -43,7 +43,7 @@ Parameter | Required | Description | Default
 ----------|-------------|-------------|--------
 bigip_login_secret | Required |  Secret that contains BIG-IP login credentials | f5-bigip-ctlr-login
 args.bigip_url | Required | The management IP for your BIG-IP device | **Required**, no default
-args.partition | Required | BIG-IP partition the CIS Controller will manage | f5-bigip-ctlr
+args.bigip_partition | Required | BIG-IP partition the CIS Controller will manage | f5-bigip-ctlr
 args.namespaces | Optional | List of Kubernetes namespaces which CIS will monitor | empty
 rbac.create | Optional | Create ClusterRole and ClusterRoleBinding | true
 serviceAccount.name | Optional | name of the ServiceAccount for CIS controller | f5-bigip-ctlr-serviceaccount
