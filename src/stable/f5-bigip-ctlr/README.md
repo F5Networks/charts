@@ -52,6 +52,7 @@ namespace | Optional | name of namespace CIS will use to create deployment and o
 image.user | Optional | CIS Controller image repository username | f5networks
 image.repo | Optional | CIS Controller image repository name | k8s-bigip-ctlr
 image.pullPolicy | Optional | CIS Controller image pull policy | Always
+image.pullSecrets | Optional | List of secrets of container registry to pull image | empty
 version | Optional | CIS Controller image tag | latest
 nodeSelector | Optional | dictionary of Node selector labels | empty
 tolerations | Optional | Array of labels | empty
