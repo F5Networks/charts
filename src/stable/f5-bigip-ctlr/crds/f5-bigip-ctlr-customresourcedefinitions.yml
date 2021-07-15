@@ -143,15 +143,15 @@ spec:
           type: string
           description: Http Traffic Termination
           jsonPath: .spec.httpTraffic
+        - name: IPAddress
+          type: string
+          description: IP address of virtualServer
+          jsonPath: .spec.virtualServerAddress
         - name: ipamLabel
           type: string
           description: ipamLabel for virtual server
           jsonPath: .spec.ipamLabel
-        - name: virtualServerAddress
-          type: string
-          description: IP address of virtualServer
-          jsonPath: .spec.virtualServerAddress
-        - name: vsAddress
+        - name: IPAMVSAddress
           type: string
           description: IP address of virtualServer
           jsonPath: .status.vsAddress
@@ -264,6 +264,10 @@ spec:
                     type: string
                     pattern: '^\/([A-z0-9-_+]+\/)*([A-z0-9-_]+\/?)*$'
                   type: array
+                iRules:
+                  type: array
+                  items:
+                    type: string
                 ipamLabel:
                   type: string
                 serviceAddress:
