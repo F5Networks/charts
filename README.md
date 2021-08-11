@@ -4,6 +4,12 @@ This repository contains [helm](https://docs.helm.sh/using_helm/#using) charts f
 
 **Note:** Charts may require access to `kube-system` namespace and/or cluster wide permissions for full functionality. Be sure to install/configure helm/tiller appropriately.
 
+---
+**Deprecation Notice:**
+
+This repository is no longer active, Please refer [k8s-bigip-ctlr](https://github.com/F5Networks/k8s-bigip-ctlr/tree/master/helm-charts) for latest updates.
+
+---
 ## Stable Charts
 
 The stable directory contains charts that are created/curated and tested by F5 Networks. These charts are supported by F5 Networks (see [SUPPORT](./SUPPORT.md) for details).
