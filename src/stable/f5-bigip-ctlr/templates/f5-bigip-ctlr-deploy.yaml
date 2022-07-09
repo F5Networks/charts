@@ -64,7 +64,11 @@ spec:
         {{- end }}
       containers:
       - name: {{ template "f5-bigip-ctlr.name" . }}
+        {{- if .Values.version }}
         image: "{{ .Values.image.user }}/{{ .Values.image.repo }}:{{ .Values.version }}"
+        {{- else }}
+        image: "{{ .Values.image.user }}/{{ .Values.image.repo}}"
+        {{- end }}
         livenessProbe:
           failureThreshold: 3
           httpGet:
